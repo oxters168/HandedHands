@@ -1,0 +1,3 @@
+[submodule "Assets/Submodules/UnityHelpers"]
+	path = Assets/Submodules/UnityHelpers
+	url = https://github.com/oxters168/UnityHelpers
