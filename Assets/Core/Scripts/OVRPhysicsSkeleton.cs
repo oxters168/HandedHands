@@ -17,6 +17,7 @@ permissions and limitations under the License.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityHelpers;
 
 [DefaultExecutionOrder(-80)]
 public class OVRPhysicsSkeleton : MonoBehaviour
@@ -163,45 +164,6 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 		}
 	}
 
-	/*virtual protected void InitializeBones(OVRPlugin.Skeleton skeleton)
-	{
-		_bones = new List<OVRBone>(new OVRBone[skeleton.NumBones]);
-		Bones = _bones.AsReadOnly();
-
-		if (!_bonesGO)
-		{
-			_bonesGO = new GameObject("Bones");
-			_bonesGO.transform.SetParent(transform, false);
-			_bonesGO.transform.localPosition = Vector3.zero;
-			_bonesGO.transform.localRotation = Quaternion.identity;
-		}
-
-		// pre-populate bones list before attempting to apply bone hierarchy
-		for (int i = 0; i < skeleton.NumBones; ++i)
-		{
-			OVRSkeleton.BoneId id = (OVRSkeleton.BoneId)skeleton.Bones[i].Id;
-			short parentIdx = skeleton.Bones[i].ParentBoneIndex;
-			Vector3 pos = skeleton.Bones[i].Pose.Position.FromFlippedXVector3f();
-			Quaternion rot = skeleton.Bones[i].Pose.Orientation.FromFlippedXQuatf();
-
-			var boneGO = new GameObject(id.ToString());
-			boneGO.transform.localPosition = pos;
-			boneGO.transform.localRotation = rot;
-			_bones[i] = new OVRBone(id, parentIdx, boneGO.transform);
-		}
-
-		for (int i = 0; i < skeleton.NumBones; ++i)
-		{
-			if (((OVRPlugin.BoneId)skeleton.Bones[i].ParentBoneIndex) == OVRPlugin.BoneId.Invalid)
-			{
-				_bones[i].Transform.SetParent(_bonesGO.transform, false);
-			}
-			else
-			{
-				_bones[i].Transform.SetParent(_bones[_bones[i].ParentBoneIndex].Transform, false);
-			}
-		}
-	}*/
 	#region From OVRCustomSkeleton.cs
 	protected virtual void InitializeBones(OVRPlugin.Skeleton skeleton)
 	{
@@ -264,7 +226,7 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 	{
 		if (_enablePhysicsCapsules)
 		{
-			_capsules = new List<OVRBoneCapsule>(new OVRBoneCapsule[skeleton.NumBoneCapsules]);
+			_capsules = new List<OVRBoneCapsule>(new OVRPhysicsBoneCapsule[skeleton.NumBoneCapsules]);
 			Capsules = _capsules.AsReadOnly();
 
 			if (!_capsulesGO)
@@ -275,7 +237,7 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 				_capsulesGO.transform.localRotation = Quaternion.identity;
 			}
 
-			_capsules = new List<OVRBoneCapsule>(new OVRBoneCapsule[skeleton.NumBoneCapsules]);
+			_capsules = new List<OVRBoneCapsule>(new OVRPhysicsBoneCapsule[skeleton.NumBoneCapsules]);
 			Capsules = _capsules.AsReadOnly();
 
 			for (int i = 0; i < skeleton.NumBoneCapsules; ++i)
@@ -290,8 +252,8 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 
 				var capsuleRigidBody = capsuleRigidBodyGO.AddComponent<Rigidbody>();
 				capsuleRigidBody.mass = 1.0f;
-				capsuleRigidBody.isKinematic = true;
-				capsuleRigidBody.useGravity = false;
+				capsuleRigidBody.isKinematic = false;
+				capsuleRigidBody.useGravity = true;
 #if UNITY_2018_3_OR_NEWER
 				capsuleRigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 #else
@@ -314,7 +276,10 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 				capsuleColliderGO.transform.localRotation = rot;
 				capsuleCollider.center = Vector3.right * mag * 0.5f;
 
-				_capsules[i] = new OVRBoneCapsule(capsule.BoneIndex, capsuleRigidBody, capsuleCollider);
+				var physicsTransform = capsuleRigidBodyGO.AddComponent<PhysicsTransform>();
+				physicsTransform.strength = 1;
+
+				_capsules[i] = new OVRPhysicsBoneCapsule(capsule.BoneIndex, capsuleRigidBody, capsuleCollider, physicsTransform);
 			}
 		}
 	}
@@ -382,7 +347,7 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 
 			for (int i = 0; i < _capsules.Count; ++i)
 			{
-				OVRBoneCapsule capsule = _capsules[i];
+				OVRPhysicsBoneCapsule capsule = (OVRPhysicsBoneCapsule)_capsules[i];
 				var capsuleGO = capsule.CapsuleRigidbody.gameObject;
 
 				if (data.IsDataValid && data.IsDataHighConfidence)
@@ -391,8 +356,10 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 
 					if (capsuleGO.activeSelf)
 					{
-						capsule.CapsuleRigidbody.MovePosition(bone.position);
-						capsule.CapsuleRigidbody.MoveRotation(bone.rotation);
+						capsule.PhysicsTransform.position = bone.position;
+						capsule.PhysicsTransform.rotation = bone.rotation;
+						//capsule.CapsuleRigidbody.MovePosition(bone.position);
+						//capsule.CapsuleRigidbody.MoveRotation(bone.rotation);
 					}
 					else
 					{
@@ -475,5 +442,15 @@ public class OVRPhysicsSkeleton : MonoBehaviour
 			default:
 				return 0;
 		}
+	}
+}
+
+public class OVRPhysicsBoneCapsule : OVRBoneCapsule
+{
+	public PhysicsTransform PhysicsTransform { get; private set; }
+
+	public OVRPhysicsBoneCapsule(short boneIndex, Rigidbody capsuleRigidBody, CapsuleCollider capsuleCollider, PhysicsTransform physicsTransform) : base(boneIndex, capsuleRigidBody, capsuleCollider)
+	{
+		PhysicsTransform = physicsTransform;
 	}
 }
