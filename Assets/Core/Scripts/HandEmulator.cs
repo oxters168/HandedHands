@@ -8,9 +8,10 @@ public class HandEmulator : MonoBehaviour
 
     public Transform handAnchor;
 
-    public Transform meshRoot;
+    public Transform trackedRoot;
+    public Transform[] trackedBones;
+    public PhysicsTransform[] physicsBones;
     public Transform[] meshBones;
-    public PhysicsBone[] physicsBones;
 
     //public GameObject hiddenHand;
 
@@ -29,26 +30,30 @@ public class HandEmulator : MonoBehaviour
         {
             var data = _dataProvider.GetSkeletonPoseData();
 
+            trackedRoot.position = handAnchor.position;
+            trackedRoot.rotation = handAnchor.rotation;
+
             //hiddenHand.SetActive(data.IsDataValid);
             if (data.IsDataValid)
             {
-                for (var i = 0; i < meshBones.Length; ++i)
+                for (var i = 0; i < trackedBones.Length; ++i)
                 {
-                    if (meshBones[i] != null && physicsBones[i] != null && physicsBones[i].bone != null && physicsBones[i].anchor != null)
+                    if (trackedBones[i] != null)
                     {
+                        trackedBones[i].localRotation = data.BoneRotations[i].FromFlippedXQuatf();
                         if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
+                            trackedBones[i].localRotation *= wristFixupRotation;
+
+                        if (physicsBones[i] != null)
                         {
-                            physicsBones[i].bone.position = handAnchor.position;
-                            physicsBones[i].bone.rotation = handAnchor.rotation;
-                            physicsBones[i].bone.rotation *= wristFixupRotation;
-                            meshRoot.position = physicsBones[i].bone.transform.position;
-                            meshRoot.rotation = physicsBones[i].bone.transform.rotation;
-                        }
-                        else
-                        {
-                            physicsBones[i].bone.position = physicsBones[i].anchor.TransformPoint(meshBones[i].localPosition);
-                            physicsBones[i].bone.rotation = physicsBones[i].anchor.TransformRotation(data.BoneRotations[i].FromFlippedXQuatf());
-                            meshBones[i].rotation = physicsBones[i].bone.transform.rotation;
+                            physicsBones[i].position = trackedBones[i].position;
+                            physicsBones[i].rotation = trackedBones[i].rotation;
+
+                            if (meshBones[i] != null)
+                            {
+                                meshBones[i].position = physicsBones[i].transform.position;
+                                meshBones[i].rotation = physicsBones[i].transform.rotation;
+                            }
                         }
                     }
                 }
