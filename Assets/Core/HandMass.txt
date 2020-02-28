@@ -1,0 +1,29 @@
+0.29 wrist
+
+0.036 thumb0
+0.018 thumb1
+0.012 thumb2
+0.004 thumb3
+
+0.016 index1
+0.012 index2
+0.002 index3
+
+0.016 middle1
+0.012 middle2
+0.002 middle3
+
+0.016 ring1
+0.012 ring2
+0.002 ring3
+
+0.04 pinky0
+0.012 pinky1
+0.008 pinky2
+0.002 pinky3
+
+thumb0 38.693, -62.729, -23.078
+index1 2.009
+middle1 5.947
+ring1 14.481
+pinky0 -23.31, 17.705, -5.847

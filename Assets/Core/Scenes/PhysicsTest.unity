@@ -319,13 +319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1242e26a5f5f214289a6607d2eda269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchor: {fileID: 0}
   striveForPosition: 1
-  striveForOriginalLocalPosition: 0
   striveForOrientation: 1
   counteractGravity: 1
   position: {x: 0, y: 0.5, z: 0}
-  strength: 10
-  maxSpeed: 3.4028235e+38
+  strength: 1
+  maxForce: 500
   rotation: {x: 0, y: 0, z: 0, w: 1}
   frequency: 6
   damping: 1
@@ -544,13 +544,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1242e26a5f5f214289a6607d2eda269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchor: {fileID: 0}
   striveForPosition: 1
-  striveForOriginalLocalPosition: 0
   striveForOrientation: 1
   counteractGravity: 1
   position: {x: 0, y: 2, z: -0.5}
-  strength: 10
-  maxSpeed: 3.4028235e+38
+  strength: 1
+  maxForce: 500
   rotation: {x: 0, y: 0, z: 0, w: 1}
   frequency: 6
   damping: 1

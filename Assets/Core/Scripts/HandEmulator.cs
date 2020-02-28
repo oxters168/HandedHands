@@ -6,12 +6,15 @@ public class HandEmulator : MonoBehaviour
 {
     private readonly Quaternion wristFixupRotation = new Quaternion(0.0f, 1.0f, 0.0f, 0.0f);
 
+    //public float jointDistanceMultiplier = 10;
+
     public Transform handAnchor;
 
     public Transform trackedRoot;
     public Transform[] trackedBones;
     public PhysicsTransform[] physicsBones;
     public Transform[] meshBones;
+    private Quaternion[] cachedRotations;
 
     //public GameObject hiddenHand;
 
@@ -21,9 +24,8 @@ public class HandEmulator : MonoBehaviour
     void Awake()
     {
         _dataProvider = GetComponent<OVRSkeleton.IOVRSkeletonDataProvider>();
-        //InitBones();
+        CacheRotations();
     }
-
     void Update()
     {
         if (_dataProvider != null)
@@ -38,27 +40,59 @@ public class HandEmulator : MonoBehaviour
             {
                 for (var i = 0; i < trackedBones.Length; ++i)
                 {
-                    if (trackedBones[i] != null)
+                    var trackedBone = trackedBones[i];
+                    var physicsBone = physicsBones[i];
+                    var meshBone = meshBones[i];
+
+                    if (trackedBone != null)
                     {
-                        trackedBones[i].localRotation = data.BoneRotations[i].FromFlippedXQuatf();
+                        trackedBone.localRotation = data.BoneRotations[i].FromFlippedXQuatf();
                         if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
-                            trackedBones[i].localRotation *= wristFixupRotation;
+                            trackedBone.localRotation *= wristFixupRotation;
 
-                        if (physicsBones[i] != null)
+                        if (physicsBone != null)
                         {
-                            physicsBones[i].position = trackedBones[i].position;
-                            physicsBones[i].rotation = trackedBones[i].rotation;
-
-                            if (meshBones[i] != null)
+                            if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
                             {
-                                meshBones[i].position = physicsBones[i].transform.position;
-                                meshBones[i].rotation = physicsBones[i].transform.rotation;
+                                physicsBone.position = trackedBone.position;
+                                physicsBone.rotation = trackedBone.rotation;
+                            }
+                            else
+                            {
+                                //Use physics position if traced position too far off
+                                //var physicsPosition = physicsBone.anchor.TransformPoint(trackedBone.localPosition);
+                                //if ((trackedBone.position - physicsBone.anchor.position).sqrMagnitude > (physicsPosition - physicsBone.anchor.position).sqrMagnitude)
+                                //    physicsBone.position = physicsPosition;
+                                //else
+                                //    physicsBone.position = trackedBone.position;
+                                //physicsBone.rotation = trackedBone.rotation;
+
+                                var joint = physicsBone.GetComponent<ConfigurableJoint>();
+                                //physicsBone.position = trackedBone.position;
+                                joint.SetTargetRotationLocal(trackedBone.localRotation, cachedRotations[i]);
+
+                                //physicsBone.localPosition = trackedBone.localPosition;
+                                //physicsBone.localRotation = trackedBone.localRotation;
+                            }
+
+                            if (meshBone != null)
+                            {
+                                meshBone.position = physicsBone.transform.position;
+                                meshBone.rotation = physicsBone.transform.rotation;
                             }
                         }
                     }
                 }
             }
         }
+    }
+
+    private void CacheRotations()
+    {
+        cachedRotations = new Quaternion[trackedBones.Length];
+        for (int i = 0; i < trackedBones.Length; i++)
+            if (trackedBones[i] != null)
+                cachedRotations[i] = trackedBones[i].localRotation;
     }
 }
 
