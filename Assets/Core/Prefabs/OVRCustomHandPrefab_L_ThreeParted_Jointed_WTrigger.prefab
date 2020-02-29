@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 801043880098643657}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 2301791957038757479}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8340613317927272959}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 7933536297468236731}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 1208327635385246149}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 9142306809652784626}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -2116,7 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8340613317927272959}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8802648148192919658}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -3519,7 +3519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8206482534190541634}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 3210098895529769331}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8340613317927272959}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -8332,7 +8332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 4228263104066196365}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -8707,7 +8707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 5899482365291375116}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -9530,7 +9530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8340613317927272959}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -10172,7 +10172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 8340613317927272959}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -10505,7 +10505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 4223155053509621479}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 5792028219329304757}
   striveForPosition: 0
-  striveForOrientation: 1
+  striveForOrientation: 0
   counteractGravity: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
