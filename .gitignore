@@ -61,3 +61,6 @@ crashlytics-build.properties
 # Imported
 Assets/Oculus/*
 !Assets/Oculus/.gitkeep
+
+Assets/TextMesh Pro/*
+!Assets/TextMesh Pro/.gitkeep

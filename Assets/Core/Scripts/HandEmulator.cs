@@ -36,7 +36,7 @@ public class HandEmulator : MonoBehaviour
             trackedRoot.rotation = handAnchor.rotation;
 
             //hiddenHand.SetActive(data.IsDataValid);
-            if (data.IsDataValid)
+            if (data.IsDataValid && data.IsDataHighConfidence)
             {
                 for (var i = 0; i < trackedBones.Length; ++i)
                 {
@@ -54,6 +54,8 @@ public class HandEmulator : MonoBehaviour
                         {
                             if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
                             {
+                                //physicsBone.AffectedBody.MovePosition(trackedBone.position);
+                                //physicsBone.AffectedBody.MoveRotation(trackedBone.rotation);
                                 physicsBone.position = trackedBone.position;
                                 physicsBone.rotation = trackedBone.rotation;
                             }
@@ -67,12 +69,18 @@ public class HandEmulator : MonoBehaviour
                                 //    physicsBone.position = trackedBone.position;
                                 //physicsBone.rotation = trackedBone.rotation;
 
-                                var joint = physicsBone.GetComponent<ConfigurableJoint>();
-                                //physicsBone.position = trackedBone.position;
-                                joint.SetTargetRotationLocal(trackedBone.localRotation, cachedRotations[i]);
+                                //var joint = physicsBone.GetComponent<ConfigurableJoint>();
+                                var joint = physicsBone.joint;
+                                //joint.SetTargetRotationLocal(trackedBone.localRotation, cachedRotations[i]); //This function is heavy, it has two cross functions in it
+                                joint.SetTargetRotation(trackedBone.localRotation, cachedRotations[i]);
+                                //joint.targetRotation = Quaternion.identity * (cachedRotations[i] * Quaternion.Inverse(trackedBone.localRotation));
+                                //joint.targetPosition = trackedBone.position;
 
                                 //physicsBone.localPosition = trackedBone.localPosition;
                                 //physicsBone.localRotation = trackedBone.localRotation;
+
+                                physicsBone.position = trackedBone.position;
+                                //physicsBone.rotation = trackedBone.rotation;
                             }
 
                             if (meshBone != null)
