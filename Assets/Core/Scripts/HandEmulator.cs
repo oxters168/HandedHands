@@ -6,8 +6,6 @@ public class HandEmulator : MonoBehaviour
 {
     private readonly Quaternion wristFixupRotation = new Quaternion(0.0f, 1.0f, 0.0f, 0.0f);
 
-    //public float jointDistanceMultiplier = 10;
-
     public Transform handAnchor;
 
     public Transform trackedRoot;
@@ -15,8 +13,6 @@ public class HandEmulator : MonoBehaviour
     public PhysicsTransform[] physicsBones;
     public Transform[] meshBones;
     private Quaternion[] cachedRotations;
-
-    //public GameObject hiddenHand;
 
     [SerializeField]
     private OVRSkeleton.IOVRSkeletonDataProvider _dataProvider;
@@ -35,7 +31,6 @@ public class HandEmulator : MonoBehaviour
             trackedRoot.position = handAnchor.position;
             trackedRoot.rotation = handAnchor.rotation;
 
-            //hiddenHand.SetActive(data.IsDataValid);
             if (data.IsDataValid && data.IsDataHighConfidence)
             {
                 for (var i = 0; i < trackedBones.Length; ++i)
@@ -54,33 +49,18 @@ public class HandEmulator : MonoBehaviour
                         {
                             if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
                             {
-                                //physicsBone.AffectedBody.MovePosition(trackedBone.position);
-                                //physicsBone.AffectedBody.MoveRotation(trackedBone.rotation);
                                 physicsBone.position = trackedBone.position;
                                 physicsBone.rotation = trackedBone.rotation;
                             }
                             else
                             {
-                                //Use physics position if traced position too far off
-                                //var physicsPosition = physicsBone.anchor.TransformPoint(trackedBone.localPosition);
-                                //if ((trackedBone.position - physicsBone.anchor.position).sqrMagnitude > (physicsPosition - physicsBone.anchor.position).sqrMagnitude)
-                                //    physicsBone.position = physicsPosition;
-                                //else
-                                //    physicsBone.position = trackedBone.position;
-                                //physicsBone.rotation = trackedBone.rotation;
-
-                                //var joint = physicsBone.GetComponent<ConfigurableJoint>();
                                 var joint = physicsBone.joint;
-                                //joint.SetTargetRotationLocal(trackedBone.localRotation, cachedRotations[i]); //This function is heavy, it has two cross functions in it
                                 joint.SetTargetRotation(trackedBone.localRotation, cachedRotations[i]);
-                                //joint.targetRotation = Quaternion.identity * (cachedRotations[i] * Quaternion.Inverse(trackedBone.localRotation));
-                                //joint.targetPosition = trackedBone.position;
-
-                                //physicsBone.localPosition = trackedBone.localPosition;
-                                //physicsBone.localRotation = trackedBone.localRotation;
 
                                 physicsBone.position = trackedBone.position;
-                                //physicsBone.rotation = trackedBone.rotation;
+                                physicsBone.rotation = trackedBone.rotation;
+                                //physicsBone.localPosition = trackedBone.localPosition;
+                                //physicsBone.localRotation = trackedBone.localRotation;
                             }
 
                             if (meshBone != null)
