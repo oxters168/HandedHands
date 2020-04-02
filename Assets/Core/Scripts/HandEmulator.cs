@@ -12,6 +12,8 @@ public class HandEmulator : MonoBehaviour
     public Transform[] trackedBones;
     public PhysicsTransform[] physicsBones;
     public Transform[] meshBones;
+
+    private Vector3[] previousPositions;
     private Quaternion[] cachedRotations;
 
     [SerializeField]
@@ -20,6 +22,7 @@ public class HandEmulator : MonoBehaviour
     void Awake()
     {
         _dataProvider = GetComponent<OVRSkeleton.IOVRSkeletonDataProvider>();
+        InitPreviousPositions();
         CacheRotations();
     }
     void Update()
@@ -47,21 +50,17 @@ public class HandEmulator : MonoBehaviour
 
                         if (physicsBone != null)
                         {
-                            if (i == (int)OVRSkeleton.BoneId.Hand_WristRoot)
-                            {
-                                physicsBone.position = trackedBone.position;
-                                physicsBone.rotation = trackedBone.rotation;
-                            }
-                            else
+                            if (i != (int)OVRSkeleton.BoneId.Hand_WristRoot)
                             {
                                 var joint = physicsBone.joint;
                                 joint.SetTargetRotation(trackedBone.localRotation, cachedRotations[i]);
-
-                                physicsBone.position = trackedBone.position;
-                                physicsBone.rotation = trackedBone.rotation;
-                                //physicsBone.localPosition = trackedBone.localPosition;
-                                //physicsBone.localRotation = trackedBone.localRotation;
                             }
+
+                            physicsBone.position = trackedBone.position;
+                            physicsBone.rotation = trackedBone.rotation; //Need to keep this for the wrists
+
+                            Vector3 boneVelocity = (trackedBone.position - previousPositions[i]) / Time.deltaTime;
+                            physicsBone.velocity = boneVelocity;
 
                             if (meshBone != null)
                             {
@@ -70,11 +69,20 @@ public class HandEmulator : MonoBehaviour
                             }
                         }
                     }
+
+                    previousPositions[i] = trackedBone.position;
                 }
             }
         }
     }
 
+    private void InitPreviousPositions()
+    {
+        previousPositions = new Vector3[trackedBones.Length];
+        for (int i = 0; i < trackedBones.Length; i++)
+            if (trackedBones[i] != null)
+                previousPositions[i] = trackedBones[i].position;
+    }
     private void CacheRotations()
     {
         cachedRotations = new Quaternion[trackedBones.Length];

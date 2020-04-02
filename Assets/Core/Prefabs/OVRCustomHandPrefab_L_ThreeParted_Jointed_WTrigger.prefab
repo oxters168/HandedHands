@@ -51,29 +51,51 @@ MonoBehaviour:
   parent: {fileID: 801043880098643657}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 6442203904339908090}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &1947066189699877385
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,29 +344,51 @@ MonoBehaviour:
   parent: {fileID: 2301791957038757479}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 300988402401645260}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &4499657752633235719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -628,29 +672,51 @@ MonoBehaviour:
   parent: {fileID: 8340613317927272959}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 5663163156209032416}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &6454685438550960155
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -959,29 +1025,51 @@ MonoBehaviour:
   parent: {fileID: 7933536297468236731}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 3782140757738467840}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &3449321547432054024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1230,29 +1318,51 @@ MonoBehaviour:
   parent: {fileID: 1208327635385246149}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 7839859884257146311}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &5729844794385570268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1534,29 +1644,51 @@ MonoBehaviour:
   parent: {fileID: 9142306809652784626}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 6813327944670886046}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &4946197152507287135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1745,29 +1877,51 @@ MonoBehaviour:
   parent: {fileID: 8340613317927272959}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 6656765456064791695}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &4115200781267292452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1960,65 +2114,25 @@ MonoBehaviour:
   maxAnchorDistance: 1
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 0}
-  striveForPosition: 1
-  striveForOrientation: 1
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 500
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 5.4107924
-      outSlope: 5.4107924
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.5863288
-    - serializedVersion: 3
-      time: 0.03907543
-      value: 0.24482982
-      inSlope: 6.8317513
-      outSlope: 6.8317513
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.37651712
-    - serializedVersion: 3
-      time: 0.075311385
-      value: 0.51920116
-      inSlope: 5.8086305
-      outSlope: 5.8086305
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.56775624
-    - serializedVersion: 3
-      time: 0.1280131
-      value: 0.791023
-      inSlope: 4.1318
-      outSlope: 4.1318
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.44941694
-    - serializedVersion: 3
-      time: 0.22344227
-      value: 0.99740326
-      inSlope: 0.033102833
-      outSlope: 0.033102833
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.1010157
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
@@ -2031,24 +2145,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children:
-  - {fileID: 3384048981976527247}
-  - {fileID: 1103467009614596016}
-  - {fileID: 5358879963852797481}
-  - {fileID: 6870839579308664503}
-  - {fileID: 7546718702061955960}
-  - {fileID: 2372842911481476030}
-  - {fileID: 3386900519103604468}
-  - {fileID: 6547900841046888396}
-  - {fileID: 3839894880617380540}
-  - {fileID: 6423885874796019986}
-  - {fileID: 6432869149548629625}
-  - {fileID: 4571953349631650354}
-  - {fileID: 1802087836026970884}
-  - {fileID: 8140997141074325798}
-  - {fileID: 2879611133765001778}
-  - {fileID: 231055048941390667}
-  - {fileID: 3875298171763675069}
+  clampStrength: 1
+  striveForOrientation: 1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &3467474086670816297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2549,29 +2654,51 @@ MonoBehaviour:
   parent: {fileID: 8802648148192919658}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 5559236178200583325}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &2334579563883841667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3033,29 +3160,51 @@ MonoBehaviour:
   parent: {fileID: 8206482534190541634}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 2641641990321661134}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &9092475697141169170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3402,29 +3551,51 @@ MonoBehaviour:
   parent: {fileID: 3210098895529769331}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 709029781793681720}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &8112999401274998295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3859,29 +4030,51 @@ MonoBehaviour:
   parent: {fileID: 8340613317927272959}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 3563214206941089298}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &2551767668229149191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6958,29 +7151,51 @@ MonoBehaviour:
   parent: {fileID: 4228263104066196365}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 5627087680479043947}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &1517101096611616033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7349,29 +7564,51 @@ MonoBehaviour:
   parent: {fileID: 5899482365291375116}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 5448182304273224059}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &676577274785263386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7798,29 +8035,51 @@ MonoBehaviour:
   parent: {fileID: 8340613317927272959}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 6892819405174702124}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &8372596813800428452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8222,29 +8481,51 @@ MonoBehaviour:
   parent: {fileID: 8340613317927272959}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 9056164984647040481}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &4820398695364148913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8493,29 +8774,51 @@ MonoBehaviour:
   parent: {fileID: 4223155053509621479}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 2626267742937361288}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &1909352722196659903
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8832,29 +9135,51 @@ MonoBehaviour:
   parent: {fileID: 5792028219329304757}
   anchorPositionPercent: 0
   anchorRotationPercent: 0
-  anchorByDistance: 1
+  anchorByDistance: 0
   minAnchorDistance: 0.01
   maxAnchorDistance: 0.04
   localLinearLimit: 3.4028235e+38
   joint: {fileID: 8789169066978447952}
-  striveForPosition: 1
-  striveForOrientation: 0
   counteractGravity: 1
-  counteractAppliedForces: 0
-  maxCounteractForce: 45
+  striveForPosition: 1
   position: {x: 0, y: 0, z: 0}
   strength: 1
   maxForce: 45
-  rotation: {x: 0, y: 0, z: 0, w: 1}
-  frequency: 10
-  damping: 1
-  childrenForceCurve:
+  calculateStrengthByDistance: 1
+  distanceDivisor: 5
+  strengthGraph:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  children: []
+  clampStrength: 1
+  striveForOrientation: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  frequency: 10
+  damping: 1
+  striveForVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  velStrength: 1
+  velMaxForce: 45
 --- !u!54 &5986523098418912129
 Rigidbody:
   m_ObjectHideFlags: 0
