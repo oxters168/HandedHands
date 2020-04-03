@@ -1,3 +1,6 @@
 [submodule "Assets/Submodules/UnityHelpers"]
 	path = Assets/Submodules/UnityHelpers
 	url = https://github.com/oxters168/UnityHelpers
+[submodule "Assets/Submodules/VRPhysicsHands"]
+	path = Assets/Submodules/VRPhysicsHands
+	url = https://github.com/oxters168/VRPhysicsHands
