@@ -4,3 +4,6 @@
 [submodule "Assets/Submodules/VRPhysicsHands"]
 	path = Assets/Submodules/VRPhysicsHands
 	url = https://github.com/oxters168/VRPhysicsHands
+[submodule "Assets/Submodules/PhysicsGadgets"]
+	path = Assets/Submodules/PhysicsGadgets
+	url = https://github.com/oxters168/PhysicsGadgets
