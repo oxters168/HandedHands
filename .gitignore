@@ -64,3 +64,6 @@ Assets/Oculus/*
 
 Assets/TextMesh Pro/*
 !Assets/TextMesh Pro/.gitkeep
+
+Assets/Imported/Classic Skybox/*
+!Assets/Imported/Classic Skybox/.gitkeep
