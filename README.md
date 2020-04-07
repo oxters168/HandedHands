@@ -11,29 +11,26 @@ Once pressed a popup dialog will appear. Navigate to where you downloaded the ap
 find 'HandedHands' in your Oculus Quest apps under 'Unknown Sources'.
 
 # How to use this Repository
-If you're looking to just use the hands or gadgets in your current project, it's better to bring them in individually rather than through this repository. They don't have all the Unity project files clutter, so they can be brought in like a package. This repository has some dependencies. To be able to open this project in Unity, you will need some extra things after downloading/cloning. Here are the steps to take in order to get everything working:
+If you're looking to just use the hands or gadgets in your current project, it's better to bring them in individually rather than through this repository. They don't have all the Unity project files clutter, so they can be brought in like a package. This repository has some dependencies. To be able to open this project in Unity, you will need some extra things after downloading/cloning. It's better to go down the cloning path as there seems to be an [issue](https://github.com/git-lfs/git-lfs/issues/903) with lfs files not downloading when clicking download on github. Here are the steps to take in order to get everything working:
 
-- First download or clone this repository
-- Make sure to include the submodules when cloning
-- If you're downloading then you'll need to also download these submodules (
-[VRPhysicsHands](https://github.com/oxters168/VRPhysicsHands), 
-[PhysicsGadgets](https://github.com/oxters168/PhysicsGadgets), 
-[UnityHelpers](https://github.com/oxters168/UnityHelpers)
-) manually and extract them in their proper folders inside 'Assets/Submodules/'.
-UnityHelpers is a bit more tricky since it has another submodule inside it called 
-[geometry3Sharp](https://github.com/gradientspace/geometry3Sharp/tree/79829341d6c225375128c32cd4720dd48f970c6e).
-Make sure to extract it inside the geometry3Sharp folder inside UnityHelpers.
-- Open the project with Unity by clicking 'Add' in Unity Hub then navigating to the master folder and choosing it.
-(there are going to be errors, don't worry)
-- Click 'Window > TextMeshPro > Import TMP Essential Resources' then when the import popup appears, click import.
-- Import Oculus Integration provided by Oculus from the Asset Store. After it's done importing click yes to update 'Oculus Utilities Plugin'
-if it asks you to, click 'Restart' if it asks, click 'Upgrade' for the 'Update Spatializer Plugins' pop up, and finally click
-'Restart' again.
-- Import Classic Skybox provided by MGSVEVO from the Asset Store. (Move it to the Imported folder for my sanity)
-- Open player settings and switch the platform to Android.
-- Go into the player settings and under XR settings add Oculus to Virtual Reality SDKs and enable V2 Signing.
-- Right click on Assets and select 'Reimport All'
-- Open the HandsTest scene and that's it!
+1. First download or clone this repository.
 
-That's how it should be done at least, but I still haven't been able to get it to work. I'll try to get it working
-and update here. Try these steps at your own risk.
+1. Make sure to include the submodules when cloning.
+
+1. If you're downloading then you'll need to also download these submodules manually ([VRPhysicsHands](https://github.com/oxters168/VRPhysicsHands), [PhysicsGadgets](https://github.com/oxters168/PhysicsGadgets), [UnityHelpers](https://github.com/oxters168/UnityHelpers)) and extract them in their proper folders inside 'Assets/Submodules/'. UnityHelpers is a bit more tricky since it has another submodule inside it called [geometry3Sharp](https://github.com/gradientspace/geometry3Sharp/tree/79829341d6c225375128c32cd4720dd48f970c6e). Make sure to extract it inside the geometry3Sharp folder inside UnityHelpers.
+
+1. Open the project with Unity by clicking 'Add' in Unity Hub then navigating to the master folder and choosing it. (there are going to be errors, don't worry)
+
+1. Click 'Window > TextMeshPro > Import TMP Essential Resources' then when the import popup appears, click import.
+
+1. Import Oculus Integration provided by Oculus from the Asset Store. After it's done importing click yes to update 'Oculus Utilities Plugin', click 'Restart', click 'Upgrade' for the 'Update Spatializer Plugins' pop up, and finally click 'Restart' again.
+
+1. Import Classic Skybox provided by mgsvevo from the Asset Store. (Move it to the Imported folder for my sanity)
+
+1. Open build settings and switch the platform to Android.
+
+1. Go into the player settings and under XR settings add Oculus to Virtual Reality SDKs and enable V2 Signing.
+
+1. Open the HandsTest scene and enjoy!
+
+I still haven't gotten it to work yet even with cloning. I believe the issue is related to git lfs, but I think this time it's from my side. I think the .asset files haven't been updating.
