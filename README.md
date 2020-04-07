@@ -3,6 +3,16 @@ This is an example Unity project demonstrating [VRPhysicsHands](https://github.c
 and [PhysicsGadgets](https://github.com/oxters168/PhysicsGadgets). To learn more about each, visit their respective
 github pages. This project was created in Unity 2019.2.19f1.
 
+![Handshake](https://i.imgur.com/ZlHfaNx.gif)
+![HoldHands](https://i.imgur.com/Qqazzy8.gif)
+![PassItOn](https://i.imgur.com/PpUAO9o.gif)
+![ThumbWar](https://i.imgur.com/VFPHRAa.gif)
+
+![Switch](https://i.imgur.com/iTsknER.gif)
+![Button](https://i.imgur.com/irIqI4S.gif)
+![Joystick](https://i.imgur.com/W71BM3X.gif)
+![Lever](https://i.imgur.com/vZY9L3A.gif)
+
 # Installation
 You need an Oculus Quest to install. Head over to the releases and download the latest apk. Plug in your Oculus Quest
 to your computer. Then you can install through adb commands, or more easily through [SideQuest](https://sidequestvr.com).
