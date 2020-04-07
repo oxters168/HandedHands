@@ -27,9 +27,9 @@ If you're looking to just use the hands or gadgets in your current project, it's
 
 1. Click 'Window > TextMeshPro > Import TMP Essential Resources' then when the import popup appears, click import.
 
-1. Import Oculus Integration provided by Oculus from the Asset Store. After it's done importing click yes to update 'Oculus Utilities Plugin', click 'Restart', click 'Upgrade' for the 'Update Spatializer Plugins' pop up, and finally click 'Restart' again.
+1. Import [Oculus Integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022) provided by Oculus from the Asset Store. After it's done importing click yes to update 'Oculus Utilities Plugin', click 'Restart', click 'Upgrade' for the 'Update Spatializer Plugins' pop up, and finally click 'Restart' again.
 
-1. Import Classic Skybox provided by mgsvevo from the Asset Store. (Move it to the Imported folder for my sanity)
+1. Import [Classic Skybox](https://assetstore.unity.com/packages/2d/textures-materials/sky/classic-skybox-24923) provided by mgsvevo from the Asset Store. (Move it to the Imported folder for my sanity)
 
 1. Open build settings and switch the platform to Android.
 
