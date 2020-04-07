@@ -29,8 +29,10 @@ If you're looking to just use the hands or gadgets in your current project, it's
 
 1. Open build settings and switch the platform to Android.
 
-1. Go into the player settings and under XR settings add Oculus to Virtual Reality SDKs and enable V2 Signing.
+1. Go into the player settings:
+   1. Under other settings make sure the minimum api level is set to 19 (If you can't set this, delete the ProjectSettings.asset file or back it up)
+   1. Under XR settings add Oculus to Virtual Reality SDKs and enable V2 Signing.
 
-1. Open the HandsTest scene and enjoy!
+1. Open the HandsTest scene and click on OVRCameraRig and make sure that 'Hand Tracking Support' is set to 'Hands Only'.
 
-I still haven't gotten it to work yet even with cloning. I believe the issue is related to git lfs, but I think this time it's from my side. I think the .asset files haven't been updating.
+And that should be it, enjoy!
