@@ -11,8 +11,7 @@ Once pressed a popup dialog will appear. Navigate to where you downloaded the ap
 find 'HandedHands' in your Oculus Quest apps under 'Unknown Sources'.
 
 # How to use this Repository
-This repository has some dependencies. To be able to open this project in Unity, you will need some extra things after
-downloading/cloning. Here are the steps to take in order to get everything working:
+If you're looking to just use the hands or gadgets in your current project, it's better to bring them in individually rather than through this repository. They don't have all the Unity project files clutter, so they can be brought in like a package. This repository has some dependencies. To be able to open this project in Unity, you will need some extra things after downloading/cloning. Here are the steps to take in order to get everything working:
 
 - First download or clone this repository
 - Make sure to include the submodules when cloning
